@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".Activity.EditProfileActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:minHeight="?attr/actionBarSize">
+
+            <ImageView
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/back_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="Back"
+                android:onClick="onBackButtonClick" />
+
+            <TextView
+                android:id="@+id/edit_profile_page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Profile"
+                android:layout_gravity="center"
+                android:textSize="24sp" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="20dp">
+
+            <!-- Username -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Username"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edit_username"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Username"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <!-- Email -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Email"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Email"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <!-- Personal Information Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Personal Information"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Date of Birth"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_dob"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Date of Birth"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Gender"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_gender"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Gender"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Bio"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_bio"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Bio"
+                android:inputType="textMultiLine"
+                android:maxLines="5"
+                android:minLines="3"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <!-- Academic Information Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="School/University"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="School/University"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_school"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="School/University"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Major/Field of Study"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_major"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Major/Field of Study"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:text="Year of Study"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/edit_year_of_study"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/edit_text"
+                android:fontFamily="@font/roboto"
+                android:hint="Year of Study"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottomLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="8dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button"
+            android:text="Save"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
