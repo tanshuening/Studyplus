@@ -1,5 +1,7 @@
 package com.example.studyplus.Activity;
 
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.studyplus.Activity.Quiz.QuizActivity;
 import com.example.studyplus.R;
 import com.example.studyplus.User;
 
@@ -23,6 +26,8 @@ public class ProfileActivity extends AppCompatActivity {
     private Button editProfileButton;
     private DBHelper dbHelper;
     private String userEmail;
+    private static final String TAG = "ProfileActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +46,24 @@ public class ProfileActivity extends AppCompatActivity {
         editProfileButton = findViewById(R.id.edit_profile_button);
 
         dbHelper = new DBHelper(this);
+
+        // Set up the profile button
+        ImageView homeButton = findViewById(R.id.HomePage);
+        homeButton.setOnClickListener(view -> {
+            Log.d(TAG, "onClick: Home button clicked");
+            Intent profileIntent = new Intent(ProfileActivity.this, ApplicationActivity.class);
+            profileIntent.putExtra("USER_EMAIL", userEmail);
+            startActivity(profileIntent);
+        });
+
+        // Set up the settings button
+        ImageView settingsButton = findViewById(R.id.Settings);
+        settingsButton.setOnClickListener(view -> {
+            Log.d(TAG, "onClick: Settings button clicked");
+            Intent settingsIntent = new Intent(ProfileActivity.this, SettingsActivity.class);
+            settingsIntent.putExtra("userEmail", userEmail);
+            startActivity(settingsIntent);
+        });
 
         Intent intent = getIntent();
         userEmail = intent.getStringExtra("USER_EMAIL");
