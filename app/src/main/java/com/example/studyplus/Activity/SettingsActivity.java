@@ -70,6 +70,9 @@ public class SettingsActivity extends AppCompatActivity {
         });
 
         // Set click listener for go back button
-        goBackButton.setOnClickListener(v -> finish());
+        goBackButton.setOnClickListener(v -> {
+            // Navigate back to ApplicationActivity
+            finish();
+        });
     }
 }
