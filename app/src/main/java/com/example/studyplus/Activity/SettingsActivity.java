@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,7 @@ public class SettingsActivity extends AppCompatActivity {
         Switch emailNotificationsSwitch = findViewById(R.id.email_notifications);
         Switch inAppNotificationsSwitch = findViewById(R.id.in_app_notifications);
         Button logoutButton = findViewById(R.id.logout_button);
-        Button goBackButton = findViewById(R.id.go_back_button);
+        ImageView goBackButton = findViewById(R.id.go_back_button);
 
         // Set listeners for switches
         pushNotificationsSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> {
