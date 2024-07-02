@@ -33,7 +33,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="The Studyplus app enhances learning by enabling users to form study groups,\nshare resources, and communicate."
+        android:text="The Studyplus app enhances learning \n by enabling users to study from video \n and quiz. "
         app:layout_constraintStart_toStartOf="@+id/textView"
         android:textSize="20dp"
         android:textColor="#8b8b8b"
